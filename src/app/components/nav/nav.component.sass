@@ -1,0 +1,94 @@
+$bp-mobile: 768px
+
+=transform($prop)
+    -webkit-transform: $prop
+    -moz-transform: $prop
+    -ms-transform: $prop
+    -o-transform: $prop
+    transform: $prop
+
+=keyframes($name)
+    @-webkit-keyframes #{$name}
+        @content
+    @-moz-keyframes #{$name}
+        @content
+    @-ms-keyframes #{$name}
+        @content
+    @keyframes #{$name}
+        @content
+
+img
+    width: 166px
+
+.container
+    //mettre en colonne
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: white
+    text-align: center // à enlever
+    +transform(translateX(-100%))
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: flex-end
+    padding-right: 15%
+
+.categories
+    cursor: pointer
+
+.nav-button
+    width: 30px
+    height: 30px
+    position: fixed
+    top: 30px
+    right: 15px
+    background-color: white
+    text-align: center // à enlever
+    border-radius: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding: 5px
+    border: white solid 1px
+
+    &:hover
+        cursor: pointer
+
+    & .barOfBurger
+        width: 80%
+        height: 2px
+        background-color: grey
+        margin: 0 auto
+        border-radius: 2px
+
+
+
+// ANIMATIONS
+
+.OpenNav
+    animation: OpenNav .5s forwards
+    animation-timing-function: ease-in
+
+
++keyframes(OpenNav)
+    0%
+        +transform(translateX(-100%))
+    100%
+        +transform(translateX(-25%))
+
+
+
+.CloseNav
+    animation: CloseNav .5s forwards
+    animation-timing-function: ease-out
+
++keyframes(CloseNav)
+    0%
+        +transform(translateX(-25%))
+    100%
+        +transform(translateX(-100%))
