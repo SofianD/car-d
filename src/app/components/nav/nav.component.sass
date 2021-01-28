@@ -17,6 +17,9 @@ $bp-mobile: 768px
     @keyframes #{$name}
         @content
 
+*
+    color: black
+
 img
     width: 166px
 
@@ -27,7 +30,7 @@ img
     bottom: 0
     left: 0
     right: 0
-    background-color: white
+    // background-color: #ebebeb
     text-align: center // à enlever
     +transform(translateX(-100%))
     border-top-right-radius: 20px
@@ -37,6 +40,13 @@ img
     justify-content: space-around
     align-items: flex-end
     padding-right: 15%
+    z-index: 2
+    background: rgb(218,255,182)
+    background: -moz-linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
+    background: -webkit-linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
+    background: linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#daffb6",endColorstr="#ebebeb",GradientType=1)
+
 
 .categories
     cursor: pointer
