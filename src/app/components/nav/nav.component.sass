@@ -1,4 +1,4 @@
-$bp-mobile: 768px
+$bp-mobile: 1280px
 
 =transform($prop)
     -webkit-transform: $prop
@@ -35,17 +35,18 @@ img
     +transform(translateX(-100%))
     border-top-right-radius: 20px
     border-bottom-right-radius: 20px
+    border-right: solid 1px #1a002f
     display: flex
     flex-direction: column
     justify-content: space-around
     align-items: flex-end
     padding-right: 15%
     z-index: 2
-    background: rgb(218,255,182)
-    background: -moz-linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
-    background: -webkit-linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
-    background: linear-gradient(90deg, rgba(218,255,182,0) 0%, rgba(235,235,235,1) 50%)
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#daffb6",endColorstr="#ebebeb",GradientType=1)
+    background: rgb(194,194,194)
+    background: -moz-linear-gradient(0deg, rgba(194,194,194,1) 0%, rgba(255,255,255,1) 100%)
+    background: -webkit-linear-gradient(0deg, rgba(194,194,194,1) 0%, rgba(255,255,255,1) 100%)
+    background: linear-gradient(0deg, rgba(194,194,194,1) 0%, rgba(255,255,255,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2c2c2",endColorstr="#ffffff",GradientType=1) 
 
 
 .categories
@@ -55,9 +56,9 @@ img
     width: 30px
     height: 30px
     position: fixed
-    top: 30px
-    right: 15px
-    background-color: white
+    bottom: 55px
+    right: 10px
+    // background-color: white
     text-align: center // à enlever
     border-radius: 100%
     display: flex
@@ -65,6 +66,11 @@ img
     justify-content: space-around
     padding: 5px
     border: white solid 1px
+    background: rgb(51,0,71)
+    background: -moz-linear-gradient(0deg, rgba(51,0,71,1) 0%, rgba(29,23,48,1) 100%)
+    background: -webkit-linear-gradient(0deg, rgba(51,0,71,1) 0%, rgba(29,23,48,1) 100%)
+    background: linear-gradient(0deg, rgba(51,0,71,1) 0%, rgba(29,23,48,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#330047",endColorstr="#1d1730",GradientType=1) 
 
     &:hover
         cursor: pointer
@@ -72,7 +78,7 @@ img
     & .barOfBurger
         width: 80%
         height: 2px
-        background-color: grey
+        background-color: white
         margin: 0 auto
         border-radius: 2px
 
@@ -81,15 +87,19 @@ img
 // ANIMATIONS
 
 .OpenNav
-    animation: OpenNav .5s forwards
+    animation: OpenNav .3s forwards
     animation-timing-function: ease-in
 
 
 +keyframes(OpenNav)
     0%
         +transform(translateX(-100%))
+        border-top-right-radius: 50%
+        border-bottom-right-radius: 50%
     100%
         +transform(translateX(-25%))
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
 
 
 
@@ -100,5 +110,39 @@ img
 +keyframes(CloseNav)
     0%
         +transform(translateX(-25%))
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
     100%
         +transform(translateX(-100%))
+        border-top-right-radius: 50%
+        border-bottom-right-radius: 50%
+
+@media screen and ( min-width: $bp-mobile )
+
+    .nav-button
+        top: 35px
+        right: 30px
+        transition: .2s
+
+        &:hover
+            +transform(scale(1.1))
+
+    +keyframes(OpenNav)
+        0%
+            +transform(translateX(-100%))
+            border-top-right-radius: 50%
+            border-bottom-right-radius: 50%
+        100%
+            +transform(translateX(-50%))
+            border-top-right-radius: 5px
+            border-bottom-right-radius: 5px
+
+    +keyframes(CloseNav)
+        0%
+            +transform(translateX(-50%))
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+        100%
+            +transform(translateX(-100%))
+            border-top-right-radius: 50%
+            border-bottom-right-radius: 50%

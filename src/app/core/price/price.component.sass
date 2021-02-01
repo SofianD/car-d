@@ -1,0 +1,99 @@
+$bp-mobile: 1280px
+
+
+.main
+    width: 100%
+    // height: 100vh
+    display: flex
+    justify-content: space-around
+    flex-direction: column
+    // text-align: center
+    margin: 50px 0
+
+.container
+    width: 100%
+    max-width: 1280px
+    min-height: 200px
+    // background-color: white
+    margin: auto
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    background-color: #ffffffdc
+    // border-radius: 4px
+
+.repair-container
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+    
+.custom-container
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+
+
+.bar
+    min-height: 200px
+    width: 16px
+
+
+.description
+    width: 100%
+    height: 100%
+    padding: 0 30px 60px 18px
+    // padding-top: 0
+    text-align: justify
+    // overflow-wrap: break-word
+    word-break: break-word
+    & h1
+        font-size: 3rem
+        margin: 0
+
+.repair-bar
+    // background: rgb(185,255,0)
+    // background: -moz-linear-gradient(180deg, rgba(185,255,0,1) 0%, rgba(52,148,52,1) 100%)
+    // background: -webkit-linear-gradient(180deg, rgba(185,255,0,1) 0%, rgba(52,148,52,1) 100%)
+    // background: linear-gradient(180deg, rgba(185,255,0,1) 0%, rgba(52,148,52,1) 100%)
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b9ff00",endColorstr="#349434",GradientType=1)
+    background: rgb(255,72,0)
+    background: -moz-linear-gradient(0deg, rgba(255,72,0,1) 0%, rgba(101,0,0,1) 100%)
+    background: -webkit-linear-gradient(0deg, rgba(255,72,0,1) 0%, rgba(101,0,0,1) 100%)
+    background: linear-gradient(0deg, rgba(255,72,0,1) 0%, rgba(101,0,0,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4800",endColorstr="#650000",GradientType=1) 
+    // border-top-right-radius: 2px
+    border-top-left-radius: 5px
+
+.clear-bar
+    background: rgb(52,89,148)
+    background: -moz-linear-gradient(180deg, rgba(52,89,148,1) 5%, rgba(0,211,255,1) 100%)
+    background: -webkit-linear-gradient(180deg, rgba(52,89,148,1) 5%, rgba(0,211,255,1) 100%)
+    background: linear-gradient(180deg, rgba(52,89,148,1) 5%, rgba(0,211,255,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#345994",endColorstr="#00d3ff",GradientType=1)
+
+.custom-bar
+    background: rgb(98,0,255)
+    background: -moz-linear-gradient(180deg, rgba(98,0,255,1) 0%, rgba(136,0,254,1) 74%)
+    background: -webkit-linear-gradient(180deg, rgba(98,0,255,1) 0%, rgba(136,0,254,1) 74%)
+    background: linear-gradient(180deg, rgba(98,0,255,1) 0%, rgba(136,0,254,1) 74%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6200ff",endColorstr="#8800fe",GradientType=1)
+    // border-bottom-right-radius: 2px
+    border-bottom-left-radius: 5px
+
+.desc-title1
+    // color: rgb(185,255,0)
+    color: #6e0000
+.desc-title2
+    color: rgb(52,89,148)
+.desc-title3
+    color: rgb(98,0,255)
+
+.mt-50
+    margin-top: 30px
+
+
+@media screen and ( min-width: $bp-mobile )
+
+    .description
+        padding: 0 30px 60px 12px
+
+        & h1
+            font-size: 8rem
