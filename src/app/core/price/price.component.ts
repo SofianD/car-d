@@ -13,7 +13,8 @@ export class PriceComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    if (window.screen.width > 980) this.projectsAnimation();
+    // if (window.screen.width > 980) this.projectsAnimation(); // pas bugged depuis mnt
+    this.projectsAnimation(); // bugged
   }
   ngOnDestroy() {
     this.observer.disconnect();
