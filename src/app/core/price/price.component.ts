@@ -13,17 +13,18 @@ export class PriceComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    this.projectsAnimation();
+    if (window.screen.width > 980) this.projectsAnimation();
   }
   ngOnDestroy() {
     this.observer.disconnect();
   }
-
+  
   projectsAnimation() {
+    console.log('ah oui oui')
     this.observer = new IntersectionObserver(
       function(entries) {
         entries.forEach((elmnt) => {
-          if (elmnt.intersectionRatio > 0.2) {
+          if (elmnt.intersectionRatio > 0.1) {
             console.log(elmnt)
             elmnt.target.classList.remove('not-visible');
           } else {
@@ -32,11 +33,11 @@ export class PriceComponent implements OnInit, OnDestroy {
         });
       },
       {
-        threshold: [0.2]
+        threshold: [0.1]
       }
     );
 
-    this.items = document.querySelectorAll('.desc-titleh1, .desc-titleh2');
+    this.items = document.querySelectorAll('.desc-titleh1, .desc-titleh2, .price-array');
 
     if (NodeList.prototype.forEach === undefined) {
       NodeList.prototype.forEach = Array.prototype.forEach as any; //grafikart

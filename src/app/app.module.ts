@@ -7,6 +7,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './core/home/home.component';
 import { OverviewComponent } from './core/overview/overview.component';
 import { PriceComponent } from './core/price/price.component';
+import { ContactComponent } from './core/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PriceComponent } from './core/price/price.component';
     NavComponent,
     HomeComponent,
     OverviewComponent,
-    PriceComponent
+    PriceComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
